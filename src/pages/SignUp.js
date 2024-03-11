@@ -65,13 +65,14 @@ function SignUp() {
 
   return (
     <div>
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column',alignItems: 'center',}}>
         <Form.Field>
         <label>First Name</label>
             <input
                 placeholder='First Name'
                 type="text"
                 {...register("firstName", { required: true, maxLength: 10 })}
+                style={{ width: '350px', height: '40px' }} 
                     />
                 {errors.firstName && <p>Please check the First Name</p>}
         </Form.Field>
@@ -81,6 +82,7 @@ function SignUp() {
                 placeholder='First Name'
                 type="text"
                 {...register("lastName", { required: true, maxLength: 10 })}
+                style={{ width: '350px', height: '40px' }} 
                     />
                {errors.lastName && <p>Please check the Last Name</p>}
         </Form.Field>
@@ -90,6 +92,7 @@ function SignUp() {
                 placeholder='Email'
                 type="email"
                 {...register("email", { required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ } )}
+                style={{ width: '350px', height: '40px' }} 
                     />
                {errors.email && <p>Invalid Email address</p>}
         </Form.Field>
@@ -99,7 +102,8 @@ function SignUp() {
                 placeholder='Mobile number'
                 type="tel"
                 {...register("mnumber", { required: true,minLength:10, maxLength:10 })}
-                    />
+                style={{ width: '350px', height: '40px' }} 
+                 />
                {errors.mnumber && <p>Invalid Mobile number</p>}
         </Form.Field>
         <Form.Field>
@@ -108,6 +112,7 @@ function SignUp() {
                 placeholder='Password'
                 type="password"
                 {...register("password", { required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/ })}
+                style={{ width: '350px', height: '40px' }}     
                     />
                {errors.password && <p>Password is weak (must contain at least one digit, one lowercase letter, one uppercase letter, and be between 8 and 32 characters)</p>}
         </Form.Field>
@@ -117,6 +122,7 @@ function SignUp() {
                 placeholder='Confirm password'
                 type="password"
                 {...register("cpassword")}
+                style={{ width: '350px', height: '40px' }} 
                     />
         </Form.Field>
         <Button type='submit'>Sign Up</Button>

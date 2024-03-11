@@ -40,27 +40,24 @@ function UploadImage() {
                 type="text"
                 value={title}
                 placeholder="Name"
-                className="border p-3 rounded-lg"
                 id="name"
                 onChange={(event) => {
                   setTitle(event.target.value);
                 }}
               />
 
-      <div className="flex gap-4">
+      <div >
                 <input
                   onChange={handleFile}
-                  className="p-3 border border-gray-300 rounded w-full"
                   type="file"
                   id="images"
                 />
 
                 <button onClick={handleUpload}>Upload</button>
               </div>
-      <div className="flex gap-4">
+      <div >
                 <input
                   onChange={handleThumbFile}
-                  className="p-3 border border-gray-300 rounded w-full"
                   type="file"
                   id="images"
                 />

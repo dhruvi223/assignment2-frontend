@@ -1,16 +1,16 @@
 import './App.css';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import Home from './components/Home'
-import ChangePassword from './components/ChangePassword';
-import EditProfile from './components/EditProfile';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Home from './pages/Home'
+import ChangePassword from './pages/ChangePassword';
+import EditProfile from './pages/EditProfile';
 import { Toaster, toast } from 'react-hot-toast';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import Profile from './components/Profile';
-import ShowList from './components/ShowList';
-import UploadImage from './components/UploadImage';
-import ShowProduct from './components/ShowProduct';
+import Profile from './pages/Profile';
+import ShowList from './pages/ShowList';
+import UploadImage from './pages/UploadImage';
+import ShowProduct from './pages/ShowProduct';
 import Navbar from './components/Navbar'
 
 function App() {

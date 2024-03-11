@@ -9,15 +9,16 @@ function ShowProduct() {
   const [data, setData] = useState('');
   const dispatch = useDispatch();
 
-const handleClick = async () => {
-  console.log('called');
-        try {
-          await dispatch(getOneProduct(id,setData));
-        } catch (error) {}
+useEffect (() => {
+  const handleClick = async () => {
+  try {
+    await dispatch(getOneProduct(id,setData));
+  } catch (error) {}
 }
+handleClick()
+}, [])
 
 
-console.log(data);
 
 
 const arr = Object.keys(data).map((key) => { return  (
@@ -26,26 +27,19 @@ const arr = Object.keys(data).map((key) => { return  (
     <div classname = "product-container">
           <div className="product-image">
             <img
-              className="product-image"
+              className="image"
               src={`http://localhost:8000/images/` + data[key].thumbnailImage}
               alt="image of product"
               />
           </div>
 
-          <div class="product-info">
-            <div class="product-title">{data[key].title}</div>
-           <p>{data[key].description}</p>
-            <p>{data[key].category}</p>
-            <p>{data[key].brandname}</p>
-            <p class="product-price">{data[key].price}</p>
-            <p class="product-discount">{data[key].discount + "off"}</p>
-          </div>
+            <div className="product-title">{data[key].title}</div>
+           <p className='product-description'>{data[key].description}</p>
+            <p className='product-category'>{data[key].category}</p>
+            <p className='product-brandname'>{data[key].brandname}</p>
+            <p className="product-price"></p>
+            <p className="product-discount">{data[key].discount + "off"}</p>
 
-          <div>
-            <span>
-              {"price:" + data[key].price}
-            </span>
-              </div>
           </div>
   </div>  
   
@@ -53,7 +47,6 @@ const arr = Object.keys(data).map((key) => { return  (
 
   return (
     <div>
-      <button onClick={handleClick}>button</button>
       <div>{arr}</div>
     </div>
   )

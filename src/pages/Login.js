@@ -54,13 +54,14 @@ function Login() {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column',alignItems: 'center',}}>
         <Form.Field>
         <label>Email</label>
             <input
                 placeholder='Email'
                 type="email"
                 {...register("email", { required: true, pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ } )}
+                style={{ width: '350px', height: '40px' }} 
                     />
                {errors.email && <p>Invalid Email address</p>}
         </Form.Field>
@@ -70,6 +71,7 @@ function Login() {
                 placeholder='Password'
                 type="password"
                 {...register("password", { required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$/ })}
+                style={{ width: '350px', height: '40px' }} 
                     />
                {errors.password && <p>Password is weak (must contain at least one digit, one lowercase letter, one uppercase letter, and be between 8 and 32 characters)</p>}
         </Form.Field>

@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -13,20 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -41,57 +27,45 @@
   width: 4pc;
 }
 
-.product-container {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-}
 
-.product-image {
-  flex: 0 0 auto;
-  margin-right: 10px;
-}
-
-.product-info {
-  justify-content: start;
-}
-
-.product-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.product-price {
-  font-weight: bold;
-  /* color: green; */
-}
-
-.product-discount {
-  /* color: red; */
-  margin-top: 5px;
-}
-
-.view-more-button {
-  /* background-color: #d4dfde; */
-  /* color: #fff; */
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.view-more-button:hover {
-  /* background-color: #0056b3; */
-}
-
-.grid{
+.product-container{
   display: grid;
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
 }
 
 .product-image{
-  width: 4pc;
-  display: flex;
+  width: auto;
+}
+
+.product-description{
+  width: auto;
+}
+
+.product-category{
+  width: auto;
+
+}
+
+.product-brand{
+  width: auto;
+}
+
+.product-title{
+  width: auto;
+}
+
+.product-price{
+  width: auto;
+}
+
+.product-discount{
+  width: auto;
+}
+
+.view-more-button{
+   width: auto;
+   padding: 5px 10px;
+   cursor: pointer;
+   border: none;
 }

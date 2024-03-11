@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import { Form, Button } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 function Profile() {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -27,27 +28,30 @@ function Profile() {
     
     <div>
       {/* <button onClick={handleClick}>Logout</button> */}
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column',alignItems: 'center',}}>
         <Form.Field>
-        <label>First Name</label>
-        <div >{user.firstname}</div>
+        <label>First Name:</label>
+        <div style={{ width: '350px', height: '40px' }}  >{user.firstname}</div>
         </Form.Field>
         
         <Form.Field>
-        <label>Last Name</label>
-        <div >{user.lastname}</div>
+        <label>Last Name:</label>
+        <div style={{ width: '350px', height: '40px' }} >{user.lastname}</div>
         </Form.Field>
         
         <Form.Field>
-        <label>Email</label>
-        <div >{user.email}</div>
+        <label>Email:</label>
+        <div style={{ width: '350px', height: '40px' }} >{user.email}</div>
         </Form.Field>
 
         <Form.Field>
-        <label>Mobile Number</label>
-        <div >{user.mnumber}</div>
+        <label>Mobile Number:</label>
+        <div style={{ width: '350px', height: '40px' }}>{user.mnumber}</div>
         </Form.Field>
-        <Button type='submit'>Log out</Button>
+        <Button type='submit' style={{ width: '350px', height: '40px', marginBottom: '10px' }}>Log out</Button>
+        <Link to={"/showlist"}>
+        <Button style={{ width: '350px', height: '40px' }}>Show List</Button>
+        </Link>
     </Form>
     </div>
   )
